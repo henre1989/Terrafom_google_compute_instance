@@ -15,7 +15,7 @@ provider "google" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu--2004-lts"
+      image = "ubuntu-2004-lts"
     }
   }
 }
