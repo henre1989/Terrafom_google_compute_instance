@@ -10,6 +10,7 @@ terraform {
 provider "google" {
   credentials = file("../silken-binder-273406-b8be5371d985.json")
   project = "silken-binder-273406"
+  region = "europe-north1"
   zone         = "europe-north1-b"
   }
 
