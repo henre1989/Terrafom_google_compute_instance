@@ -8,15 +8,22 @@ terraform {
 }
 
 provider "google" {
-  resource "google_compute_instance" "default" {
+  credentials = file("../silken-binder-273406-b8be5371d985.json")
+  project = "silken-binder-273406"
+  zone         = "europe-north1-b"
+  }
+
+resource "google_compute_instance" "default" {
   name         = "build_ist"
   machine_type = "e2-medium"
-  zone         = "europe-north1-b"
-
   boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-2004-lts"
     }
   }
-}
+  network_interface {
+    network = "default"
+    access_config {
+    }
+  }
 }
